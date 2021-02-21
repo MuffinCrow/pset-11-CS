@@ -7,7 +7,7 @@ public class ProblemSet11 {
 
     }
 
-    public static ArrayList<String> fizzBuzz(int start, int end) {
+    public ArrayList<String> fizzBuzz(int start, int end) {
         if (start < end) {
             int counter = start;
             ArrayList<String> temp = new ArrayList<>();
@@ -32,7 +32,7 @@ public class ProblemSet11 {
         return null;
     }
 
-    public static int maxSpan(ArrayList<Integer> numbers) {
+    public int maxSpan(ArrayList<Integer> numbers) {
         if (numbers != null) {
             switch (numbers.size()) {
                 case 0:
@@ -57,19 +57,19 @@ public class ProblemSet11 {
         return -1;
     }
 
-    public static ArrayList<Integer> fix34(ArrayList<Integer> numbers) {
+    public ArrayList<Integer> fix34(ArrayList<Integer> numbers) {
         if (numbers != null) {
             ArrayList<Integer> fours = new ArrayList<>();
             ArrayList<Integer> threes = new ArrayList<>();
 
             for (int i = 0; i < numbers.size(); i++) {
-                numbers.add(numbers.get(i));
                 if (numbers.get(i) == 3) {
                     threes.add(i);
                 } else if (numbers.get(i) == 4) {
                     fours.add(i);
                 }
             }
+
 
             if (fours.size() == threes.size() && threes.get(0) < fours.get(0)) {
                 boolean checkA = true;
@@ -99,13 +99,12 @@ public class ProblemSet11 {
         return null;
     }
 
-    public static ArrayList<Integer> fix45(ArrayList<Integer> numbers) {
+    public ArrayList<Integer> fix45(ArrayList<Integer> numbers) {
         if (numbers != null) {
             ArrayList<Integer> fours = new ArrayList<>();
             ArrayList<Integer> fives = new ArrayList<>();
 
             for (int i = 0; i < numbers.size(); i++) {
-                numbers.add(numbers.get(i));
                 if (numbers.get(i) == 5) {
                     fives.add(i);
                 } else if (numbers.get(i) == 4) {
@@ -141,11 +140,11 @@ public class ProblemSet11 {
         return null;
     }
 
-    public static boolean canBalance(ArrayList<Integer> numbers) {
+    public boolean canBalance(ArrayList<Integer> numbers) {
         if (numbers != null && numbers.size() > 0) {
             for (int i = 0; i < numbers.size(); i++) {
                 ArrayList<Integer> start = new ArrayList<Integer>(numbers.subList(0, i+1));
-                ArrayList<Integer> end = new ArrayList<Integer>(numbers.subList(i+1, numbers.size()+1));
+                ArrayList<Integer> end = new ArrayList<Integer>(numbers.subList(i+1, numbers.size()));
 
                 int startSum = 0;
                 int endSum = 0;
@@ -164,7 +163,7 @@ public class ProblemSet11 {
         return false;
     }
 
-    public static boolean linearIn(ArrayList<Integer> outer, ArrayList<Integer> inner) {
+    public boolean linearIn(ArrayList<Integer> outer, ArrayList<Integer> inner) {
         if (outer != null && inner != null && outer.size() > 0 && inner.size() > 0) {
             for (int i = 0; i < inner.size() - 1; i++) {
                 if (inner.get(i) > inner.get(i + 1))
@@ -195,7 +194,7 @@ public class ProblemSet11 {
         return false;
     }
 
-    public static ArrayList<Integer> squareUp(int n) {
+    public ArrayList<Integer> squareUp(int n) {
         if (n >= 0) {
             if (n == 0) {
                 ArrayList<Integer> output = new ArrayList<Integer>(0);
@@ -221,7 +220,7 @@ public class ProblemSet11 {
         return null;
     }
 
-    public static ArrayList<Integer> seriesUp(int n) {
+    public ArrayList<Integer> seriesUp(int n) {
         if (n >= 0) {
             if (n == 0) {
                 ArrayList<Integer> output = new ArrayList<Integer>(0);
@@ -247,7 +246,7 @@ public class ProblemSet11 {
         return null;
     }
 
-    public static int maxMirror(ArrayList<Integer> numbers) {
+    public int maxMirror(ArrayList<Integer> numbers) {
         if (numbers != null) {
             int l1 = numbers.size();
             int l2 = l1;
@@ -272,7 +271,7 @@ public class ProblemSet11 {
         return -1;
     }
 
-    public static int countClumps(ArrayList<Integer> numbers) {
+    public int countClumps(ArrayList<Integer> numbers) {
         if (numbers != null) {
             int current = numbers.get(0);
             int past1 = current;
